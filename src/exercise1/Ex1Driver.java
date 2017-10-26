@@ -117,7 +117,7 @@ public class Ex1Driver {
     System.out.println(Arrays.toString(numbers));
   }
   /**
-   * TODO: Task 7: Create an array of 100 random integers between 1 and 100, ask the user for an integer and tell if that number is in the array
+   * TODO: Task 7: Create an array of 100 random integers between 1-100, ask the user for an integer and tell if that number is in the array
    */
   public static void task7() {
     System.out.println();

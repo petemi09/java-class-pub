@@ -9,6 +9,7 @@ import java.util.logging.Logger;
 /**
  *
  * @author yasiro01
+ * Mitchell Petellin
  */
 public class Ex2Driver {
   public static final String PATH = "data/";

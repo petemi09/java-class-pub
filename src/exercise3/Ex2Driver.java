@@ -63,7 +63,15 @@ public class Ex2Driver {
    * @throws java.io.FileNotFoundException 
    */
   public static void writeMatrix(int[][] matrix, String filename) throws FileNotFoundException {
-    throw new UnsupportedOperationException();
+    File file = new File(filename);
+    PrintWriter write = new PrintWriter(file);
+    for(int[] row: matrix) {
+        for(int item: row) {
+            write.printf("%5d", item);
+        }
+        write.print("\n");
+    }
+    write.close();
   }
   /**
    * Read a matrix from a file
@@ -72,7 +80,25 @@ public class Ex2Driver {
    * @throws java.io.FileNotFoundException
    */
   public static int[][] readFile(String filename) throws FileNotFoundException {
-    throw new UnsupportedOperationException();
+    Scanner scan = new Scanner(new File(filename));
+    String row1 = scan.nextLine();
+    String [] row_column = row1.split(" ");
+    int row = Integer.parseInt(row_column[0]);
+    int col = Integer.parseInt(row_column[1]);
+    int[][] matrix = new int[row][col];
+    int count = 0;
+    while(scan.hasNextLine() && count <= row){
+        String matrix_num = scan.nextLine();
+        String [] num = matrix_num.split(" ");
+        for(int i = 0; i < col; i++){
+            matrix[count][i] = Integer.parseInt(num[i]);
+        }
+        count++;
+    }
+    scan.close();
+    return matrix;
+  
+    
     /*
     10. Open the input file and create a Scanner object to read its content
     20. Read two values (rows and columns) from the first line, if possible
@@ -89,6 +115,17 @@ public class Ex2Driver {
    * @return the resulting matrix
    */
   public static int[][] multiply(int[][] matrix1, int[][] matrix2) {
-    throw new UnsupportedOperationException();
+    int m = matrix1.length;
+    int o = matrix2[0].length;
+    int p = matrix2.length;
+    int[][] sum_array = new int[m][o];
+    for(int i = 0; i < m;i++){
+        for(int x = 0; x < o;x++){
+            for(int z = 0; z < p;z++){
+                sum_array[i][x] += matrix1[i][z]*matrix2[z][x];
+            }
+        }
+    }
+    return sum_array;
   }
 }

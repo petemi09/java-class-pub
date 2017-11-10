@@ -17,5 +17,28 @@ import java.util.regex.Pattern;
  * @author yasiro01
  */
 public class Chart {
+    private HashMap<Integer, Song> chart;
 
+public Chart(String filePath){
+        chart = new HashMap<Integer, Song>();
+        Song m;
+        try {
+            BufferedReader file = new BufferedReader(new FileReader(filePath));
+            String[] line;
+            for(int i = 1; i < 41; i++){
+                line = file.readLine().split(",");
+                m = new Song(line[1], line[2]);
+                chart.put(i, m);
+            }
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Chart.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Chart.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public Song getSong(Integer i){
+        return chart.get(i);
+    }
+    
 }

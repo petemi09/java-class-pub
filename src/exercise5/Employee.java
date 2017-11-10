@@ -6,5 +6,37 @@ package exercise5;
  * @author yasiro01
  */
 public class Employee {
+    private String firstName;
+    private String lastName;
+    private double salary;
+    private boolean fullTime;
+    
+public Employee(String firstName, String lastName, double salary, boolean fullTime){
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.salary = salary;
+    this.fullTime = fullTime;
+}
+public String getFirstName(){
+    return firstName;
+}
+public String getLastName(){
+    return lastName;
+}
+public double getSalary(){
+    return salary;
+}
+public boolean isFullTime(){
+    return fullTime;
+}
 
+public String toString(){
+    if(fullTime){
+        return firstName + " " + lastName + " earns $" + salary + "0 annually";
+    } 
+    else {
+        return firstName + " " + lastName + " earns $" + salary + "0 hourly";
+
+    }
+}
 }

@@ -7,6 +7,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Class Roster
@@ -15,5 +17,29 @@ import java.util.regex.Pattern;
  * @author yasiro01
  */
 public class Roster {
+  private ArrayList<Student> studentList; 
   
+  public Roster(String filePath) throws IOException{
+      studentList = new ArrayList<Student>();
+      Student m;
+      try {
+          BufferedReader file = new BufferedReader(new FileReader(filePath));
+          String[] line;
+          Double gpa;
+          for(int i = 0; i < 10; i++){
+              line = file.readLine().split(",");
+              gpa = Double.parseDouble(line[2]);
+              m = new Student(line[0], line[1], gpa);
+              studentList.add(m);
+          }
+      } catch (FileNotFoundException ex) {
+          Logger.getLogger(Roster.class.getName()).log(Level.SEVERE, null, ex);
+      } 
+  }
+  
+  public void printRoster(){
+      for(int i = 0; i < studentList.size(); i++){
+          System.out.println(studentList.get(i));
+      }
+  }
 }

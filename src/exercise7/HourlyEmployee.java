@@ -37,7 +37,8 @@ public class HourlyEmployee extends employee {
     
     public void printWeeklyCheck() {
         double check = ((hours * wageRate / 52));
-        System.out.println(name + "'s weekly pay is, $" + check);
+        //String check <
+        System.out.printf(name + "'s weekly pay is, $ %.02f", check);
     }
 }
 

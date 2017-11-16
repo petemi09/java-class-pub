@@ -22,7 +22,7 @@ public employee(String name, String ssn){
     netPay = 0.0;
 }
 
-public String getName(){
+protected String getName(){
     return name;
 }
 
@@ -30,11 +30,11 @@ protected void setName(String name){
     this.name = name;
 }
 
-public String getSsn(){
+protected String getSsn(){
     return ssn;
 }
 
-public void setSsn(String ssn){
+protected void setSsn(String ssn){
     this.ssn = ssn;
 }
 

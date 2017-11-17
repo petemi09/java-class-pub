@@ -12,7 +12,7 @@ package exercise7;
 public class SalariedEmployee extends employee {
     private double salary;
     
-    public SalariedEmployee(double salary, String name, String ssn){
+    public SalariedEmployee(String name, String ssn, double salary){
         super(name, ssn);
         this.salary = salary;
         
@@ -26,8 +26,8 @@ public class SalariedEmployee extends employee {
         this.salary = salary;
     }
     
-    public void printWeeklyCheck(String name){
-        System.out.println(name + "'s weekly pay is " + salary);
+    public void printWeeklyCheck(){
+        System.out.println(name + "'s weekly pay is $" + salary + "0");
     }
     
    

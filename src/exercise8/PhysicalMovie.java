@@ -8,6 +8,12 @@ package exercise8;
 public class PhysicalMovie extends Movie {
   private final String medium;
   private String location;
+ 
+        public PhysicalMovie(String medium, String location, String director, int releaseYear, long id, String title, int quantity) {
+        super(director, releaseYear, id, title, quantity);
+        this.medium = medium;
+        this.location = location;
+        }
 
   /**
    * Get the value of medium
@@ -38,7 +44,18 @@ public class PhysicalMovie extends Movie {
    * @param newLocation 
    */
   public void move(String newLocation) {
-    throw new UnsupportedOperationException();
+    setLocation(newLocation);
   }
 
+    @Override
+    public String toString() {
+        return title + " by " + director + " in year " + releaseYear;
+    }
+
+    @Override
+    public String getInfo() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+  
 }

@@ -8,11 +8,13 @@ public abstract class Movie extends Item {
   protected final String director;
   protected final int releaseYear;
 
-  public Movie(String director, int releaseYear, long id, String title, int quantity) {
-    super(id, title, quantity);
-    this.director = director;
-    this.releaseYear = releaseYear;
-  }
+    
+    public Movie(String director, int releaseYear, long id, String title, int quantity) {
+        super(id, title, quantity);
+        this.director = director;
+        this.releaseYear = releaseYear;
+    }
+  
 
   /**
    * Get the value of director
